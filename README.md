@@ -1,0 +1,6 @@
+In this project Instead of gussing, we can systematically test a range of diffrent members of selected features and discover which results in the best perofrming model, This is called a grid search, where k
+argumnet to the SelectKBest class can be tuned, It is a good practice to evaluate configurations on regression tasks using repeated k_fold cross_validation, We were used three repeats of 10-fold cross-validation
+via the RepeatedKFold class. we can define a Pipeline  that correctly prepares the features selection transform on the training set and applies it to th etrain set and test set for each fold of the cross-validation
+we can define then define the number of features to consider from 80mto 100, Note that the grid is a dictionary mapping of parameter-to-values and given that er are using a Pipeline, we can access the SelectKBest
+object via the name we gave it 'sel' and then the parameter name 'k' seperated by two underscores or 'sale__k', we were eavaluate models using the negative mean absolute error(neg_mean_absolute_error). It is
+negative becasue the sickit-learn requires the score to be maximized so the MAE is made negative, meaning scores scale from -infinity to 0 (best).
